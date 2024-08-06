@@ -23,7 +23,7 @@
         }
 
         .new-content img {
-            max-width: 100px;
+            max-width: 300px;
             margin-right: 10px;
             border-radius: 5px;
         }
@@ -46,19 +46,29 @@
             background-color: #cccccc;
             cursor: not-allowed;
         }
+
+        .top-image {
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
     </style>
 
-    <!-- Einbindung von MathJax -->
+    <!-- Einbindung von MathJax
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
 </head>
 
 <body>
 
     <h1>Mini-Theo</h1>
-    <p>Mini-Theo ist eine Plattform, um den Minimierungs-Algorithmus </p>
+    <p>Mini-Theo ist eine Plattform, um den Minimierungs-Algorithmus zu lernen. </p>
 
-    <button id="addContentButton">Inhalt hinzufügen</button>
+    <h3>Aufgabe:</h3>
+    <p>Minimiere folgenden Automaten.</p>
+    <img class="top-image" src="../res/DFA1.png" alt="DFA1"><br>
+
+    <button id="addContentButton">Lösung anzeigen</button>
 
     <div id="content">
         <p>Exercise under construction...</p>
@@ -74,20 +84,20 @@
 
             // Erstelle ein neues img-Element
             var img = document.createElement('img');
-            img.src = 'https://via.placeholder.com/100'; // Beispiel-URL für das Bild
+            img.src = '../res/DFA1.png'; // Relativer Pfad zum Bild
             img.alt = 'Ein Bild';
 
             // Erstelle einen Textknoten
             var text = document.createTextNode('Dies ist ein neuer Inhalt mit Bild.');
 
-            // Erstelle einen Textknoten für LaTeX
-            var latexText = document.createElement('div');
-            latexText.innerHTML = 'Dies ist eine LaTeX-Formel: $$E = mc^2$$';
+            // // Erstelle einen Textknoten für LaTeX
+            // var latexText = document.createElement('div');
+            // latexText.innerHTML = 'Dies ist eine LaTeX-Formel: $$E = mc^2$$';
 
             // Füge das img-Element und den Text zum div-Element hinzu
             newContent.appendChild(img);
             newContent.appendChild(text);
-            newContent.appendChild(latexText);
+            // newContent.appendChild(latexText);
 
             // Füge das neue div-Element dem content-Container hinzu
             document.getElementById('content').appendChild(newContent);
