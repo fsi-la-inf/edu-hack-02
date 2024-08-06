@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Theo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #content {
+            margin-top: 20px;
+        }
+
+        .new-content {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .new-content img {
+            max-width: 100px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+
+    <!-- Einbindung von MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <h1>Mini-Theo</h1>
+    <p>Mini-Theo ist eine Plattform, um den Minimierungs-Algorithmus </p>
+
+    <button id="addContentButton">Inhalt hinzufügen</button>
+
+    <div id="content">
+        <p>Exercise under construction...</p>
+        <!-- Hier wird neuer Inhalt hinzugefügt -->
+    </div>
+
+    <script>
+        document.getElementById('addContentButton').addEventListener('click', function () {
+            // Erstelle ein neues div-Element
+            var newContent = document.createElement('div');
+            newContent.className = 'new-content';
+            newContent.textContent = 'Solution under construction...';
+
+            // Erstelle ein neues img-Element
+            var img = document.createElement('img');
+            img.src = 'https://via.placeholder.com/100'; // Beispiel-URL für das Bild
+            img.alt = 'Ein Bild';
+
+            // Erstelle einen Textknoten
+            var text = document.createTextNode('Dies ist ein neuer Inhalt mit Bild.');
+
+            // Erstelle einen Textknoten für LaTeX
+            var latexText = document.createElement('div');
+            latexText.innerHTML = 'Dies ist eine LaTeX-Formel: $$E = mc^2$$';
+
+            // Füge das img-Element und den Text zum div-Element hinzu
+            newContent.appendChild(img);
+            newContent.appendChild(text);
+            newContent.appendChild(latexText);
+
+            // Füge das neue div-Element dem content-Container hinzu
+            document.getElementById('content').appendChild(newContent);
+
+            // Deaktiviere den Button
+            this.disabled = true;
+        });
+    </script>
+
+</body>
+
+</html>
