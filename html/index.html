@@ -82,7 +82,13 @@
             // Erstelle ein neues div-Element
             var newContent = document.createElement('div');
             newContent.className = 'new-content';
-            newContent.textContent = 'Hier ist der minimierte Automat:';
+
+            // Erstelle eine Überschrift
+            var heading = document.createElement('h3');
+            heading.textContent = 'Lösung'; // Die gewünschte Überschrift
+
+            // Erstelle einen Textknoten
+            var text1 = document.createTextNode('Hier ist der minimierte Automat:');
 
             // Erstelle ein neues img-Element
             var img = document.createElement('img');
@@ -90,15 +96,17 @@
             img.alt = 'Ein Bild';
 
             // Erstelle einen Textknoten
-            var text = document.createTextNode('Dieser Automat ist minimiert.');
+            var text2 = document.createTextNode('Dieser Automat ist minimiert.');
 
             // // Erstelle einen Textknoten für LaTeX
             // var latexText = document.createElement('div');
             // latexText.innerHTML = 'Dies ist eine LaTeX-Formel: $$E = mc^2$$';
 
             // Füge das img-Element und den Text zum div-Element hinzu
+            newContent.appendChild(heading);
+            newContent.appendChild(text1);
             newContent.appendChild(img);
-            newContent.appendChild(text);
+            newContent.appendChild(text2);
             // newContent.appendChild(latexText);
 
             // Füge das neue div-Element dem content-Container hinzu
