@@ -71,14 +71,15 @@
     <p>Minimiere folgenden Automaten.</p>
     <img class="top-image" src="img/DFA1.png" alt="DFA1"><br>
 
-    <button id="addContentButton">Lösung anzeigen</button>
+    <button id="showStep1">Schritt 1 anzeigen</button>
+    <button id="showSolution">Lösung anzeigen</button>
 
     <div id="content">
         <!-- Hier wird neuer Inhalt hinzugefügt -->
     </div>
 
     <script>
-        document.getElementById('addContentButton').addEventListener('click', function () {
+        document.getElementById('showSolution').addEventListener('click', function () {
             // Erstelle ein neues div-Element
             var newContent = document.createElement('div');
             newContent.className = 'new-content';
@@ -114,6 +115,198 @@
 
             // Deaktiviere den Button
             this.disabled = true;
+            document.getElementById('showStep1').disabled = true;
+        });
+
+        document.getElementById('showStep1').addEventListener('click', function () {
+            // Erstelle ein neues div-Element
+            var newContent = document.createElement('div');
+            newContent.className = 'new-content';
+
+            // Erstelle eine Überschrift
+            var heading = document.createElement('h3');
+            heading.textContent = 'Schritt 1'; // Die gewünschte Überschrift
+
+            // Erstelle einen Textknoten
+            var text1 = document.createTextNode('Zunächst wird eine Zeugentabelle aufgestellt:');
+
+            // Erstelle ein neues img-Element
+            var img = document.createElement('img');
+            img.src = 'img/schritt1.JPG'; // Relativer Pfad zum Bild
+            img.alt = 'Ein Bild';
+
+            // Erstelle einen Textknoten
+            var text2 = document.createTextNode('Der Zustand Z4 ist unerreichbar.');
+
+            // // Erstelle einen Textknoten für LaTeX
+            // var latexText = document.createElement('div');
+            // latexText.innerHTML = 'Dies ist eine LaTeX-Formel: $$E = mc^2$$';
+
+            // Erstelle ein neues Button-Element
+            var button = document.createElement('button');
+
+            // Setze den Text des Buttons
+            button.textContent = 'Schritt 2';
+            button.id = 'showStep2';
+            // Füge eine Event-Listener-Funktion hinzu, die beim Klick ausgeführt wird
+            button.addEventListener('click', function () {
+
+                // Erstelle ein neues div-Element
+                var nextContent = document.createElement('div');
+                nextContent.className = 'new-content';
+
+                // Erstelle eine Überschrift
+                var heading = document.createElement('h3');
+                heading.textContent = 'Schritt 2'; // Die gewünschte Überschrift
+
+                // Erstelle einen Textknoten
+                var text1 = document.createTextNode('Folgende Dreieckstabelle wird genutzt, um die äquivalenten Zustände zu identifizieren:');
+
+                // Erstelle ein neues img-Element
+                var img1 = document.createElement('img');
+                img1.src = 'img/schritt2.JPG'; // Relativer Pfad zum Bild
+                img1.alt = 'Ein Bild';
+
+                // Erstelle einen Textknoten
+                var text2 = document.createTextNode('Wir ergänzen X0 für Paare von End- und Nicht-End-Zuständen:');
+
+                // Erstelle ein neues img-Element
+                var img2 = document.createElement('img');
+                img2.src = 'img/schritt3.JPG'; // Relativer Pfad zum Bild
+                img2.alt = 'Ein Bild';
+
+                // // Erstelle einen Textknoten für LaTeX
+                // var latexText = document.createElement('div');
+                // latexText.innerHTML = 'Dies ist eine LaTeX-Formel: $$E = mc^2$$';
+
+                // Erstelle ein neues Button-Element
+                var button = document.createElement('button');
+                // Setze den Text des Buttons
+                button.textContent = 'Schritt 3';
+                button.id = 'showStep3';
+                // Füge eine Event-Listener-Funktion hinzu, die beim Klick ausgeführt wird
+                button.addEventListener('click', function () {
+
+                    // Erstelle ein neues div-Element
+                    var nextContent = document.createElement('div');
+                    nextContent.className = 'new-content';
+
+                    // Erstelle eine Überschrift
+                    var heading = document.createElement('h3');
+                    heading.textContent = 'Schritt 3'; // Die gewünschte Überschrift
+
+                    // Erstelle einen Textknoten
+                    var text1 = document.createTextNode('Mithilfe einer Übergangstabelle von Zustandspaaren werden weitere nicht-äquivalente Zustandspaare ermittelt:');
+
+                    // Erstelle ein neues img-Element
+                    var img1 = document.createElement('img');
+                    img1.src = 'img/schritt4.JPG'; // Relativer Pfad zum Bild
+                    img1.alt = 'Ein Bild';
+
+                    // Erstelle einen Textknoten
+                    var text2 = document.createTextNode('Da sich keine weiteren Änderungen ergeben, bleibt die Dreieckstabelle in ihrem bisherigen Zustand:');
+
+                    // Erstelle ein neues img-Element
+                    var img2 = document.createElement('img');
+                    img2.src = 'img/schritt3.JPG'; // Relativer Pfad zum Bild
+                    img2.alt = 'Ein Bild';
+
+                    // // Erstelle einen Textknoten für LaTeX
+                    // var latexText = document.createElement('div');
+                    // latexText.innerHTML = 'Dies ist eine LaTeX-Formel: $$E = mc^2$$';
+
+                    // Erstelle ein neues Button-Element
+                    var button = document.createElement('button');
+                    // Setze den Text des Buttons
+                    button.textContent = 'Lösung';
+                    button.id = 'showSolution';
+                    // Füge eine Event-Listener-Funktion hinzu, die beim Klick ausgeführt wird
+                    button.addEventListener('click', function () {
+                        // Erstelle ein neues div-Element
+                        var newContent = document.createElement('div');
+                        newContent.className = 'new-content';
+
+                        // Erstelle eine Überschrift
+                        var heading = document.createElement('h3');
+                        heading.textContent = 'Lösung'; // Die gewünschte Überschrift
+
+                        // Erstelle einen Textknoten
+                        var text1 = document.createTextNode('Hier ist der minimierte Automat:');
+
+                        // Erstelle ein neues img-Element
+                        var img = document.createElement('img');
+                        img.src = 'img/DFA1_sol.jpeg'; // Relativer Pfad zum Bild
+                        img.alt = 'Ein Bild';
+
+                        // Erstelle einen Textknoten
+                        var text2 = document.createTextNode('Dieser Automat ist minimiert.');
+
+                        // // Erstelle einen Textknoten für LaTeX
+                        // var latexText = document.createElement('div');
+                        // latexText.innerHTML = 'Dies ist eine LaTeX-Formel: $$E = mc^2$$';
+
+                        // Füge das img-Element und den Text zum div-Element hinzu
+                        newContent.appendChild(heading);
+                        newContent.appendChild(text1);
+                        newContent.appendChild(img);
+                        newContent.appendChild(text2);
+                        // newContent.appendChild(latexText);
+
+                        // Füge das neue div-Element dem content-Container hinzu
+                        document.getElementById('content').appendChild(newContent);
+
+                        // Deaktiviere den Button
+                        this.disabled = true;
+                    });
+
+                    // Füge das img-Element und den Text zum div-Element hinzu
+                    nextContent.appendChild(heading);
+                    nextContent.appendChild(text1);
+                    nextContent.appendChild(img1);
+                    nextContent.appendChild(text2);
+                    nextContent.appendChild(img2);
+                    nextContent.appendChild(button);
+                    // newContent.appendChild(latexText);
+
+                    // Füge das neue div-Element dem content-Container hinzu
+                    document.getElementById('content').appendChild(nextContent);
+
+                    // Deaktiviere den Button
+                    this.disabled = true;
+
+                });
+
+                // Füge das img-Element und den Text zum div-Element hinzu
+                nextContent.appendChild(heading);
+                nextContent.appendChild(text1);
+                nextContent.appendChild(img1);
+                nextContent.appendChild(text2);
+                nextContent.appendChild(img2);
+                nextContent.appendChild(button);
+                // newContent.appendChild(latexText);
+
+                // Füge das neue div-Element dem content-Container hinzu
+                document.getElementById('content').appendChild(nextContent);
+
+                // Deaktiviere den Button
+                this.disabled = true;
+
+            });
+
+            // Füge das img-Element und den Text zum div-Element hinzu
+            newContent.appendChild(heading);
+            newContent.appendChild(text1);
+            newContent.appendChild(img);
+            newContent.appendChild(text2);
+            newContent.appendChild(button);
+            // newContent.appendChild(latexText);
+
+            // Füge das neue div-Element dem content-Container hinzu
+            document.getElementById('content').appendChild(newContent);
+
+            // Deaktiviere den Button
+            this.disabled = true;
+            document.getElementById('showSolution').disabled = true;
         });
     </script>
 
