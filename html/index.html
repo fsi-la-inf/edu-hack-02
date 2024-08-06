@@ -74,7 +74,6 @@
     <button id="addContentButton">Lösung anzeigen</button>
 
     <div id="content">
-        <p>Exercise under construction...</p>
         <!-- Hier wird neuer Inhalt hinzugefügt -->
     </div>
 
@@ -83,7 +82,7 @@
             // Erstelle ein neues div-Element
             var newContent = document.createElement('div');
             newContent.className = 'new-content';
-            newContent.textContent = 'Solution under construction...';
+            newContent.textContent = 'Hier ist der minimierte Automat:';
 
             // Erstelle ein neues img-Element
             var img = document.createElement('img');
@@ -91,7 +90,7 @@
             img.alt = 'Ein Bild';
 
             // Erstelle einen Textknoten
-            var text = document.createTextNode('Dies ist ein neuer Inhalt mit Bild.');
+            var text = document.createTextNode('Dieser Automat ist minimiert.');
 
             // // Erstelle einen Textknoten für LaTeX
             // var latexText = document.createElement('div');
